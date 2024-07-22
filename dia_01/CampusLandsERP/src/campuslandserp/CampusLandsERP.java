@@ -16,15 +16,17 @@ public class CampusLandsERP {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        /*menu menu = new menu();
+        menu.setVisible(true);*/
         Scanner sc= new Scanner(System.in);
-        
+        String bold = "\033[0;1m";
         boolean start=true;
         boolean coord=true;
         boolean trainer=true;
         boolean camper=true;
         
         while (start==true){
-            System.out.println("-----Bienvenido-----\n¿Quién desea ingresar?\n  1. Coordinacion\n  2. Trainer\n  3. Camper\n  4. Salir");
+            System.out.println(bold+"-----Bienvenido-----\n¿Quién desea ingresar?\n  1. Coordinacion\n  2. Trainer\n  3. Camper\n  4. Salir");
             int a = sc.nextInt();
             /*nextInt recibe numeros int, nextLine recibe Strings*/
 
@@ -32,7 +34,7 @@ public class CampusLandsERP {
 
                 case 1 -> {
                     while(coord==true){
-                        System.out.println("\n-----Coordinador-----\n  1. Asignación\n  2. Registrar\n  3. Cerrar sesión");
+                        System.out.println("\n"+bold+"-----Coordinador-----\n  1. Asignación\n  2. Registrar\n  3. Cerrar sesión");
                         int rta = sc.nextInt();
                         switch(rta){
                             case 1 ->
@@ -51,7 +53,7 @@ public class CampusLandsERP {
                 
                 case 2 -> {
                     while(trainer==true){
-                        System.out.println("\n-----Trainer-----\n  1. Ver listado\n  2. Ver salas\n  3. Cerrar sesión");
+                        System.out.println("\n"+bold+"-----Trainer-----\n  1. Ver listado\n  2. Ver salas\n  3. Cerrar sesión");
                         int rta = sc.nextInt();
                         switch (rta) {
                             case 1 ->
@@ -70,7 +72,7 @@ public class CampusLandsERP {
                 
                 case 3 -> {
                     while(camper==true){
-                        System.out.println("\n-----Camper-----\n  1. Ver notas\n  2. Ver curso\n  3. Cerrar sesión");
+                        System.out.println("\n"+bold+"-----Camper-----\n  1. Ver notas\n  2. Ver curso\n  3. Cerrar sesión");
                         int rta = sc.nextInt();
                         switch (rta) {
                             case 1 ->
