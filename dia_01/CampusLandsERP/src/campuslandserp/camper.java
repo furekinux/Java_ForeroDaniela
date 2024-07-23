@@ -20,7 +20,7 @@ public class camper {
     private String estado;
     private String riesgo;
     
-    public camper(int id,String nombres,String apellidos,String direccion,String acudiente,
+    public camper(String nombres,String apellidos,String direccion,String acudiente,
                 String celular,String telefono,String estado,String riesgo)
     {
         this.id= serial++;
@@ -45,6 +45,17 @@ public class camper {
         this.estado=null;
         this.riesgo=null;
     }
-
+    
+    public camper(String nombres,String apellidos){
+        this.id= serial++;
+        this.nombres= nombres;
+        this.apellidos=apellidos;
+        this.direccion=null;
+        this.acudiente=null;
+        this.celular=null;
+        this.telefono=null;
+        this.estado=null;
+        this.riesgo=null;
+    }
     
 }
