@@ -38,7 +38,7 @@ public class menu extends javax.swing.JFrame {
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        button1 = new java.awt.Button();
+        logout = new java.awt.Button();
         trainer = new java.awt.Button();
         camper = new java.awt.Button();
         coordinador = new java.awt.Button();
@@ -60,7 +60,9 @@ public class menu extends javax.swing.JFrame {
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titulo.setText("Menú Principal");
 
-        jLabel2.setText("Ingrese el número del perfil de usuario que va a utilizar.");
+        jLabel2.setFont(new java.awt.Font("Liberation Sans", 3, 15)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Seleccione el usuario que va a ingresar al sistema de Campuslands ERP");
 
         jLabel3.setText("1. Coordinador");
 
@@ -68,13 +70,15 @@ public class menu extends javax.swing.JFrame {
 
         jLabel5.setText("3. Camper");
 
-        button1.setLabel("Cerrar sesión");
-        button1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
+        logout.setBackground(new java.awt.Color(255, 255, 255));
+        logout.setLabel("Cerrar sesión");
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutMouseClicked(evt);
             }
         });
 
+        trainer.setBackground(new java.awt.Color(255, 204, 204));
         trainer.setLabel("Ingresar");
         trainer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -87,6 +91,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
+        camper.setBackground(new java.awt.Color(204, 255, 204));
         camper.setLabel("Ingresar");
         camper.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -94,15 +99,11 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
+        coordinador.setBackground(new java.awt.Color(204, 204, 255));
         coordinador.setLabel("Ingresar");
         coordinador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 coordinadorMouseClicked(evt);
-            }
-        });
-        coordinador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                coordinadorActionPerformed(evt);
             }
         });
 
@@ -115,14 +116,11 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(191, 191, 191))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(210, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(77, 77, 77)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -164,11 +162,11 @@ public class menu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(camper, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(32, 32, 32)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
-        button1.getAccessibleContext().setAccessibleName("logout");
+        logout.getAccessibleContext().setAccessibleName("logout");
         coordinador.getAccessibleContext().setAccessibleName("Coordinador");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,15 +182,6 @@ public class menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button1ActionPerformed
-
-    private void coordinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coordinadorActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_coordinadorActionPerformed
 
     private void camperMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_camperMouseClicked
         // TODO add your handling code here:
@@ -211,7 +200,14 @@ public class menu extends javax.swing.JFrame {
     private void coordinadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coordinadorMouseClicked
         // TODO add your handling code here:
         titulo.setText("Coordinador");
+        modulo_coordinacion modulo_coordinacion = new modulo_coordinacion();
+        modulo_coordinacion.setVisible(true);
     }//GEN-LAST:event_coordinadorMouseClicked
+
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_logoutMouseClicked
 
     /**
      * @param args the command line arguments
@@ -249,7 +245,6 @@ public class menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button button1;
     private java.awt.Button camper;
     private java.awt.Button coordinador;
     private javax.swing.Box.Filler filler1;
@@ -261,6 +256,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private java.awt.Button logout;
     private javax.swing.JLabel titulo;
     private java.awt.Button trainer;
     // End of variables declaration//GEN-END:variables
