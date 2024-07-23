@@ -15,4 +15,13 @@ public class arrays {
     public static void listadd(Object item){
         CampersArray[CampersArray.length+1]=item;
     }
+    
+    public String getcampers(){
+        String lista_campers="";
+        for (Object camper : CampersArray) {
+            lista_campers=lista_campers+" "+camper;
+        }
+        return lista_campers;
+    } 
+
 }

@@ -17,13 +17,10 @@ public class CampusLandsERP {
      */
     public static void main(String[] args) {
         
-        
-        /*Interfáz gráfica*/
-        /*
         menu menu = new menu();
         menu.setVisible(true);
-        */
-
+        
+        /*arrays getcampers = new getcampers();*/
         Scanner sc= new Scanner(System.in);
         
         String bold = "\033[0;1m";
