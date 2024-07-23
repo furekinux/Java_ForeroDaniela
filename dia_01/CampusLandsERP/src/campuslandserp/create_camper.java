@@ -4,12 +4,14 @@
  */
 package campuslandserp;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author camper
  */
 public class create_camper extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form create
      */
@@ -34,14 +36,15 @@ public class create_camper extends javax.swing.JFrame {
         DireccionLabel = new javax.swing.JLabel();
         direccion = new javax.swing.JTextField();
         IdentificacionLabel = new javax.swing.JLabel();
-        idenficacion = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        identificacion = new javax.swing.JTextField();
+        enviar = new javax.swing.JButton();
         AcudienteLabel = new javax.swing.JLabel();
         acudiente = new javax.swing.JTextField();
         CelularLabel = new javax.swing.JLabel();
         TelefonoLabel = new javax.swing.JLabel();
         celular = new javax.swing.JTextField();
         telefono = new javax.swing.JTextField();
+        cancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -64,8 +67,13 @@ public class create_camper extends javax.swing.JFrame {
         IdentificacionLabel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         IdentificacionLabel.setText("Número de identificación");
 
-        jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jButton1.setText("Confirmar");
+        enviar.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        enviar.setText("Confirmar");
+        enviar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                enviarMouseClicked(evt);
+            }
+        });
 
         AcudienteLabel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         AcudienteLabel.setText("Acudiente");
@@ -75,6 +83,14 @@ public class create_camper extends javax.swing.JFrame {
 
         TelefonoLabel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         TelefonoLabel.setText("Telefono fijo");
+
+        cancel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        cancel.setText("Cancelar");
+        cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,15 +115,17 @@ public class create_camper extends javax.swing.JFrame {
                     .addComponent(nombres)
                     .addComponent(apellidos)
                     .addComponent(direccion)
-                    .addComponent(idenficacion)
+                    .addComponent(identificacion)
                     .addComponent(acudiente)
                     .addComponent(celular)
                     .addComponent(telefono))
                 .addGap(90, 90, 90))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(300, 300, 300))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(231, Short.MAX_VALUE)
+                .addComponent(enviar)
+                .addGap(28, 28, 28)
+                .addComponent(cancel)
+                .addGap(241, 241, 241))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,7 +135,7 @@ public class create_camper extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IdentificacionLabel)
-                    .addComponent(idenficacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(identificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NombresLabel)
@@ -142,49 +160,37 @@ public class create_camper extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TelefonoLabel)
                     .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(30, 30, 30))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancel)
+                    .addComponent(enviar))
+                .addGap(36, 36, 36))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(create_camper.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(create_camper.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(create_camper.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(create_camper.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_cancelMouseClicked
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new create_camper().setVisible(true);
-            }
-        });
-    }
+    private void enviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enviarMouseClicked
+        // TODO add your handling code here:
+        
+        String new_idenficacion = identificacion.getText();
+        String new_nombres = nombres.getText();
+        String new_apellidos = apellidos.getText();
+        String new_direccion = direccion.getText();
+        String new_acudiente = acudiente.getText();
+        String new_celular = celular.getText();
+        String new_telefono = telefono.getText();
+        
+        camper Camper = new camper(new_idenficacion,new_nombres, new_apellidos, new_direccion, new_acudiente, new_celular, new_telefono);
+        
+        arrays.listadd(Camper);
+    }//GEN-LAST:event_enviarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AcudienteLabel;
@@ -194,14 +200,19 @@ public class create_camper extends javax.swing.JFrame {
     private javax.swing.JLabel IdentificacionLabel;
     private javax.swing.JLabel NombresLabel;
     private javax.swing.JLabel TelefonoLabel;
-    private javax.swing.JTextField acudiente;
-    private javax.swing.JTextField apellidos;
-    private javax.swing.JTextField celular;
-    private javax.swing.JTextField direccion;
-    private javax.swing.JTextField idenficacion;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JTextField nombres;
-    private javax.swing.JTextField telefono;
+    public javax.swing.JTextField acudiente;
+    public javax.swing.JTextField apellidos;
+    private javax.swing.JButton cancel;
+    public javax.swing.JTextField celular;
+    public javax.swing.JTextField direccion;
+    private javax.swing.JButton enviar;
+    public javax.swing.JTextField identificacion;
+    public javax.swing.JTextField nombres;
+    public javax.swing.JTextField telefono;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
+
+    private void add(camper Camper1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

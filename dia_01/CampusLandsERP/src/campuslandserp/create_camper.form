@@ -47,17 +47,19 @@
                   <Component id="nombres" alignment="0" max="32767" attributes="0"/>
                   <Component id="apellidos" max="32767" attributes="0"/>
                   <Component id="direccion" max="32767" attributes="0"/>
-                  <Component id="idenficacion" max="32767" attributes="0"/>
+                  <Component id="identificacion" max="32767" attributes="0"/>
                   <Component id="acudiente" alignment="0" max="32767" attributes="0"/>
                   <Component id="celular" alignment="0" max="32767" attributes="0"/>
                   <Component id="telefono" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="300" max="-2" attributes="0"/>
-              <Component id="jButton1" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="300" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="231" max="32767" attributes="0"/>
+              <Component id="enviar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <Component id="cancel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -69,7 +71,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IdentificacionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="idenficacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="identificacion" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -101,9 +103,12 @@
                   <Component id="TelefonoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="telefono" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="47" max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="enviar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -125,6 +130,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nombres">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="NombresLabel">
       <Properties>
@@ -143,6 +151,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="apellidos">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="DireccionLabel">
       <Properties>
@@ -153,6 +164,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="direccion">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="IdentificacionLabel">
       <Properties>
@@ -162,15 +176,21 @@
         <Property name="text" type="java.lang.String" value="N&#xfa;mero de identificaci&#xf3;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="idenficacion">
+    <Component class="javax.swing.JTextField" name="identificacion">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="enviar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Liberation Sans" size="15" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Confirmar"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="enviarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="AcudienteLabel">
       <Properties>
@@ -181,6 +201,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="acudiente">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="CelularLabel">
       <Properties>
@@ -199,8 +222,25 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="celular">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="telefono">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="cancel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="15" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Cancelar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cancelMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

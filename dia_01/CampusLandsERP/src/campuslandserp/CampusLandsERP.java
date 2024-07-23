@@ -11,17 +11,21 @@ import java.util.Scanner;/*LIBRERÍA PARA HABILITAR INPUTS*/
  * @author camper
  */
 public class CampusLandsERP {
-
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
+        
         /*Interfáz gráfica*/
+        /*
         menu menu = new menu();
         menu.setVisible(true);
+        */
 
         Scanner sc= new Scanner(System.in);
+        
         String bold = "\033[0;1m";
         boolean start=true;
         boolean coord=true;

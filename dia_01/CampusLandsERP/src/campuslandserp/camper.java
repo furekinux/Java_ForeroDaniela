@@ -3,11 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package campuslandserp;
+
+import java.util.ArrayList;
+
 /**
  *
  * @author camper
  */
 public class camper {
+    
     private static int serial = 1;
     /*Como es estática se queda igual en la clase aunque creemos nuevos campers*/
     private int id;
@@ -21,7 +25,7 @@ public class camper {
     private String estado;
     private String riesgo;
     
-    public void camper(String identificacion,String nombres,String apellidos,String direccion,String acudiente,String celular,String telefono,String estado,String riesgo){
+    public camper(String identificacion,String nombres,String apellidos,String direccion,String acudiente,String celular,String telefono,String estado,String riesgo){
         this.id= serial++;
         this.identificacion= identificacion;
         this.nombres= nombres;
@@ -34,7 +38,21 @@ public class camper {
         this.riesgo=riesgo;
     }
     
-    public camper( ){
+    public camper(String identificacion,String nombres,String apellidos,String direccion,String acudiente,String celular,String telefono){
+        this.id= serial++;
+        this.identificacion= identificacion;
+        this.nombres= nombres;
+        this.apellidos=apellidos;
+        this.direccion=direccion;
+        this.acudiente=acudiente;
+        this.celular=celular;
+        this.telefono=telefono;
+        this.estado=null;
+        this.riesgo=null;
+    }
+    
+    
+    public camper(){
         this.id= serial++;
         this.identificacion= null;
         this.nombres= null;
@@ -47,7 +65,6 @@ public class camper {
         this.riesgo=null;
     }
 
-    
     // Setter y Getters
     public void setIdentificacion(String identificacion){
         this.identificacion= identificacion;
