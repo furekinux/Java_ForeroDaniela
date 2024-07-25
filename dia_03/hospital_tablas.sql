@@ -72,3 +72,6 @@ create table paciente(
     fecha_nacimiento date not null,
     fecha_ingreso date not null
 );
+select * from hospital;
+
+insert into hospital(nombre,direccion)values("San José","La esquina")

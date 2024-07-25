@@ -1,35 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package hospital;
 import java.util.Scanner;
-
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 /**
  *
  * @author camper
  */
 public class Hospital {
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         // TODO code application logic here
-        conectarBBDD conectar = new conectarBBDD();
-        conectar.conectar();
+        
+        ConnecToServer cn=new ConnecToServer();
+        Statement st;
+        ResultSet rs;
+        try {
+            st=cn.con.createStatement();
+            rs=st.executeQuery("select * from hospital;");
+            while (rs.next()) {                
+                System.out.println(rs.getInt("id"));
+            }
+            cn.con.close();
+        } catch (SQLException e) {}
         
         boolean menu = true;
         Scanner sc = new Scanner(System.in);
         
-        while(menu==true){
-            /*Scanner sc = new Scanner();*/
+        while(menu){
             System.out.println("------ Menú Principal ------");
-            System.out.println("Bienvenido, ¿Qué acción desea realizar?");
+            System.out.println("Bienvenido, ¿Qué acción desea realizar?\n");
             int a = sc.nextInt();
             switch (a) {
                 case 1->
