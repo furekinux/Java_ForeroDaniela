@@ -2,7 +2,7 @@
 ${\color{#ff0000}Base\space \color{#ff0000}de\space \color{#ff0000}datos\space \color{#2a82f5}para\space \color{#2a82f5}hospital}$
 </h1>
 <p>
-  Este README.md realizará un breve resumen de lo realizado para la base de datos detrás del modelo de dominio para el desarrollo de un Sistema Integrado Hospitalario (SIH).
+  Este README.md realizará un breve resumen de lo realizado para la base de datos detrás del modelo de dominio para el desarrollo de un Sistema Integrado Hospitalario (SIH). Para ver el proceso de desarrollo de la base de datos con cada uno de sus modelo, revisar el siguiente enlace https://drive.google.com/file/d/1k4FbAf9L_BAkKfCbmSW3Zu_dWDAwF3Jz/view?usp=sharing.
 </p>
 
 ## Índice
