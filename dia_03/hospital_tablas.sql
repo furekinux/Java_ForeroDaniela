@@ -3,7 +3,8 @@
 -- ######################################
 
 -- Usar base de datos
-use `bclzsd9hip6j1proyaic`;
+create database hospital;
+use hospital;
 
 -- Crear Tabla Hospital
 create table hospital(
@@ -74,4 +75,5 @@ create table paciente(
 );
 select * from hospital;
 
-insert into hospital(nombre,direccion)values("San José","La esquina")
+insert into hospital(nombre,direccion)values("San José","La esquina");
+insert into hospital(nombre,direccion)values("San Francisco","Cra 15")

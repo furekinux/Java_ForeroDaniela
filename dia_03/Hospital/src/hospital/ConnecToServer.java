@@ -18,7 +18,8 @@ public class ConnecToServer {
     public ConnecToServer(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://clever-host:3306/bclzsd9hip6j1proyaic-mysql.services.clever-cloud.com","uzwx5o0vu4wtu0ti","OI8uB31cexc31UdLCabv");
+            /**/
+            con=DriverManager.getConnection("jdbc:mysql://bclzsd9hip6j1proyaic-mysql.services.clever-cloud.com:3306/bclzsd9hip6j1proyaic?useSSL=false","uzwx5o0vu4wtu0ti","OI8uB31cexc31UdLCabv");
         } catch (ClassNotFoundException | SQLException e) {
             System.err.println("Error:" +e);
         }
