@@ -53,24 +53,10 @@ public class Main {
                                 System.out.println("\nNombre del Hospital:");
                                 String direccion_hospital=sc.nextLine();
                                 
-                                ConnecToServer cn=new ConnecToServer();
-                                Statement st;
-                                ResultSet rs;
-                                try {
-                                    st=cn.con.createStatement();
-                                    rs=st.executeQuery("insert into hospital(nombre,direccion) values("+nombre_hospital+direccion_hospital+");");
-                                    cn.con.close();
-                                } catch (SQLException e) {}
+                                Hospital hospital = new hospital();
                                 
-                                try {
-                                    
-                                    st=cn.con.createStatement();
-                                    rs=st.executeQuery("select * from hospital where nombre="+nombre_hospital+" and ;");
-                                    while (rs.next()) {                
-                                        System.out.println(rs.getInt("id")+" "+rs.getString("nombre"));
-                                    }
-                                    cn.con.close();
-                                } catch (SQLException e) {}
+                                hospital.hospital_create(nombre_hospital, direccion_hospital);
+                                hospital.hospital_read_especific(nombre_hospital, direccion_hospital);
                             
                             }case 2->{
                                 
