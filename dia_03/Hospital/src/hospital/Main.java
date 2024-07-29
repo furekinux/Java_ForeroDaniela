@@ -60,8 +60,14 @@ public class Main {
                             
                             }case 2->{
                                 
-                            }case 3 ->
+                            }case 3 ->{
                                 System.out.println("hi");
+
+                            }default ->{
+                                System.out.println("Saliendo");
+                                menu_secundario=false;
+                            }
+                            
                         }
                     }
                     menu_secundario=true;
@@ -87,24 +93,44 @@ public class Main {
                                 } catch (SQLException e) {}
                                 
                             }
-                            default ->
-                                System.out.println("Hi");
+                            default ->{
+                                System.out.println("Saliendo");
+                                menu_secundario=false;
+                            }
                         }
                     }
                     menu_secundario=true;
                 }case 3->{
                     while(menu_secundario){
-                        System.out.println("--------- Menú Actualizar/Cambiar ---------\n¿Dónde va a realizar la acción?");
+                        System.out.println("--------- Menú Borrar/Eliminar ---------\n¿Dónde va a realizar la acción?");
                         System.out.println("1. Hospital\n2. Departamento\n3. Nuevo Pabellón\n4. Nuevo Personal\n5. Nuevo Paciente\n6. Nuevo equipo");
                         a = sc.nextInt();
+                        switch(a){
+                            case 1->{
+                            
+                            } default->{
+                                System.out.println("Saliendo");
+                                menu_secundario=false;
+                            }
+                        }
                     }
                     menu_secundario=true;
                 }case 4->{
                     while(menu_secundario){
                         System.out.println("--------- Menú Actualizar/Cambiar ---------\n¿Dónde va a realizar la acción?");
                         System.out.println("1. Hospital\n2. Nuevo Departamento\n3. Nuevo Pabellón\n4. Nuevo Personal\n5. Nuevo Paciente\n6. Nuevo equipo");
+                        a = sc.nextInt();
+                        switch(a){
+                            case 1->{
+                            
+                            } default->{
+                                System.out.println("Saliendo");
+                                menu_secundario=false;
+                            }
+                        }
                     }
-                    menu_secundario=true;                }
+                    menu_secundario=true;
+                }
                 default->{
                     System.out.println("\n--------- Cerrando la sesión ---------");
                     menu=false;
