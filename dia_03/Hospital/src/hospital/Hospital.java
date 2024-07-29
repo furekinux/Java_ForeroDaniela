@@ -1,17 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package hospital;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 /**
  *
- * @author camper
+ * @author Daniela Forero Ballén 1.142.714.225
  */
 public class Hospital {
     
@@ -20,7 +17,8 @@ public class Hospital {
     public Hospital(){
     }
     
-    public void hospital_read(String nombre_hospital,String direccion_hospital){
+    public void hospital_read(){
+
         ConnecToServer cn=new ConnecToServer();
         Statement st;
         ResultSet rs;
@@ -28,7 +26,7 @@ public class Hospital {
             st=cn.con.createStatement();
             rs=st.executeQuery("select * from hospital;");
             while (rs.next()) {                
-                System.out.println(rs.getInt("id")+" "+rs.getString("nombre"));
+                System.out.println("\n["+rs.getInt("id_hospital")+"]   "+rs.getString("nombre_hospital")+"   "+rs.getString("direccion_hospital"));
             }
             cn.con.close();
         } catch (SQLException e) {}
@@ -42,33 +40,42 @@ public class Hospital {
         System.out.println("Nombre del Hospital:");
         nombre_hospital=sc.nextLine();
                                 
-        System.out.println("Dirección del Hospital:");
+        System.out.println("\nDirección del Hospital:");
         direccion_hospital=sc.nextLine();
         
         ConnecToServer cn=new ConnecToServer();
         Statement st;
         ResultSet rs;
+        PreparedStatement ps;
+        
         try {
-            st=cn.con.createStatement();
-            rs=st.executeQuery("insert into hospital(nombre,direccion) values("+nombre_hospital+","+direccion_hospital+");");
+            ps=cn.con.prepareStatement("insert into hospital(nombre_hospital,direccion_hospital) values(?,?);");
+            ps.setString(1, nombre_hospital);
+            ps.setString(2, direccion_hospital);
+            ps.executeUpdate();
             cn.con.close();
-            System.out.println("Se ingresó el hospital correctamente.");
+
+            System.out.println("\nSe ingresó el hospital correctamente.");
+            
+            Hospital hospital= new Hospital();
+            hospital.hospital_read();
+            
         } catch (SQLException e) {
-            System.out.println("Nos se ingresó el hospital, vuelva a intentarlo.");
+            System.out.println("No se ingresó el hospital, vuelva a intentarlo.");
         }
         
-        hospital_read_especific(nombre_hospital,direccion_hospital);
+        
     }
     
-    public void hospital_read_especific(String nombre_hospital,String direccion_hospital){
+    public void hospital_read_especific(int id_hospital){
         ConnecToServer cn=new ConnecToServer();
         Statement st;
         ResultSet rs;
         try {
             st=cn.con.createStatement();
-            rs=st.executeQuery("select * from hospital where nombre="+nombre_hospital+" and direccion="+direccion_hospital+";");
+            rs=st.executeQuery("select * from hospital where id="+id_hospital+";");
             while (rs.next()) {                
-                System.out.println(rs.getInt("id")+" "+rs.getString("nombre"));
+                System.out.println(rs.getInt("id_hospital")+" "+rs.getString("nombre_hospital")+" "+rs.getString("direccion_hospital"));
             }
             cn.con.close();
         } catch (SQLException e) {}

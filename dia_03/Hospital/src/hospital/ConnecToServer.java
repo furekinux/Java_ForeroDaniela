@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package hospital;
 
 import java.sql.Connection;
@@ -10,7 +6,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author camper
+ * @author Daniela Forero Ballén 1.142.714.225
  */
 public class ConnecToServer {
     Connection con;
@@ -19,7 +15,11 @@ public class ConnecToServer {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             /**/
-            con=DriverManager.getConnection("jdbc:mysql://bclzsd9hip6j1proyaic-mysql.services.clever-cloud.com:3306/bclzsd9hip6j1proyaic?useSSL=false","uzwx5o0vu4wtu0ti","OI8uB31cexc31UdLCabv");
+            String port="3306";
+            String direccion="bclzsd9hip6j1proyaic-mysql.services.clever-cloud.com";
+            String base_datos="bclzsd9hip6j1proyaic";
+            
+            con=DriverManager.getConnection("jdbc:mysql://"+direccion+":"+port+"/"+base_datos+"?useSSL=false","uzwx5o0vu4wtu0ti","OI8uB31cexc31UdLCabv");
         } catch (ClassNotFoundException | SQLException e) {
             System.err.println("Error:" +e);
         }
