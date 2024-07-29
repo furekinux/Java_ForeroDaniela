@@ -13,26 +13,11 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        /*ConnecToServer cn=new ConnecToServer();
-        Statement st;
-        ResultSet rs;
-        try {
-            st=cn.con.createStatement();
-            rs=st.executeQuery("select * from hospital;");
-            while (rs.next()) {                
-                System.out.println(rs.getInt("id")+" "+rs.getString("nombre"));
-            }
-            cn.con.close();
-        } catch (SQLException e) {}*/
-        
         boolean menu = true;
         boolean menu_secundario = true;
-        
-        
-        
-        
         Scanner sc = new Scanner(System.in);
         int a;
+        
         while(menu){
             System.out.println("------ Menú Principal ------");
             System.out.println("Bienvenido, ¿Qué acción desea realizar?");
@@ -46,17 +31,17 @@ public class Main {
                         a = sc.nextInt();
                         switch(a){
                             case 1->{
-                                System.out.println("------ Ingrese los siguientes datos para el nuevo hospital ------");
+                                String nombre_hospital;
+                                String direccion_hospital;
+                                System.out.println("\n------ Ingrese los siguientes datos para el nuevo hospital ------");
                                 
                                 System.out.println("Nombre del Hospital:");
-                                String nombre_hospital=sc.nextLine();
-                                System.out.println("\nNombre del Hospital:");
-                                String direccion_hospital=sc.nextLine();
+                                nombre_hospital=sc.nextLine();
                                 
-                                /*Hospital hospital = new hospital();
+                                System.out.println("Dirección del Hospital:");
+                                direccion_hospital=sc.nextLine();
                                 
-                                hospital.hospital_create(nombre_hospital, direccion_hospital);
-                                hospital.hospital_read_especific(nombre_hospital, direccion_hospital);*/
+                                Hospital hospital = new Hospital();
                             
                             }case 2->{
                                 
@@ -79,18 +64,7 @@ public class Main {
                         switch(a){
                             case 1->{
                                 
-                                ConnecToServer cn=new ConnecToServer();
-                                Statement st;
-                                ResultSet rs;
-                                try {
-                                    
-                                    st=cn.con.createStatement();
-                                    rs=st.executeQuery("select * from hospital;");
-                                    while (rs.next()) {                
-                                        System.out.println(rs.getInt("id")+" "+rs.getString("nombre"));
-                                    }
-                                    cn.con.close();
-                                } catch (SQLException e) {}
+                                
                                 
                             }
                             default ->{
