@@ -53,10 +53,10 @@ public class Main {
                                 System.out.println("\nNombre del Hospital:");
                                 String direccion_hospital=sc.nextLine();
                                 
-                                Hospital hospital = new hospital();
+                                /*Hospital hospital = new hospital();
                                 
                                 hospital.hospital_create(nombre_hospital, direccion_hospital);
-                                hospital.hospital_read_especific(nombre_hospital, direccion_hospital);
+                                hospital.hospital_read_especific(nombre_hospital, direccion_hospital);*/
                             
                             }case 2->{
                                 
