@@ -1,13 +1,15 @@
 package hospital;
 import java.util.Scanner;
 
+
 /**
  *
  * @author Daniela Forero Ballén 1.142.714.225
  */
 public class Main {
-
+    
     public static void main(String[] args) {
+        String bold = "\033[0;1m";
         
         boolean menu = true;
         boolean menu_secundario = true;
@@ -15,7 +17,8 @@ public class Main {
         int a;
         
         while(menu){
-            System.out.println("------------- Menú Principal -------------");
+
+            System.out.println(bold+"------------- Menú Principal -------------");
             System.out.println("Bienvenido, ¿Qué acción desea realizar?");
             System.out.println("1. Crear/Ingresar información\n2. Leer/Ver información\n3. Actualizar/Cambiar información\n4. Borrar datos específicos\n5. Salir");
             
@@ -23,7 +26,7 @@ public class Main {
             switch (a) {
                 case 1->{
                     while(menu_secundario){
-                        System.out.println("\n------------- Menú Crear/Ingresar -------------\n¿Dónde va a realizar la acción?");
+                        System.out.println("\n"+bold+"------------- Menú Crear/Ingresar -------------\n¿Dónde va a realizar la acción?");
                         System.out.println("1. Nuevo Hospital\n2. Nuevo Departamento\n3. Nuevo Pabellón\n4. Nuevo Personal\n5. Nuevo Paciente\n6. Nuevo equipo");
                         a = sc.nextInt();
                         switch(a){
@@ -62,7 +65,7 @@ public class Main {
                     menu_secundario=true;
                 }case 2->{
                     while(menu_secundario){
-                        System.out.println("\n------------- Menú Ver/Leer -------------\n¿Dónde va a realizar la acción?");
+                        System.out.println("\n"+bold+"------------- Menú Ver/Leer -------------\n¿Dónde va a realizar la acción?");
                         System.out.println("1. Hospital(es)\n2. Departamento(es)\n3. Pabellón(es)\n4. Personal(es)\n5. Paciente(s)\n6. Equipo(s)");
                         a = sc.nextInt();
                         switch(a){
@@ -79,12 +82,12 @@ public class Main {
                                 pabellon.pabellon_read();
                                 
                             }case 4->{
-                                /*Personal personal = new Personal();
-                                personal.personal_read();*/
+                                Personal personal = new Personal();
+                                personal.personal_read();
                                 
                             }case 5->{
-                                /*Paciente paciente = new Paciente();
-                                paciente.paciente_read();*/
+                                Paciente paciente = new Paciente();
+                                paciente.paciente_read();
                                 
                             }case 6->{
                                 /*Equipos equipos = new Equipos();

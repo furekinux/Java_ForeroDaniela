@@ -25,13 +25,17 @@ public class Personal {
             cn = new ConnecToServer();
             Statement st;
             ResultSet rs;
+            
             try {
                 st=cn.con.createStatement();
-                rs=st.executeQuery("select *, nombre_departamento from personal "
-                        + "INNER JOIN departamento USING(id_departamento)");
+                
+                rs=st.executeQuery("SELECT id_personal, nombres_personal, apellidos_personal, nombre_departamento"
+                        + " FROM personal "
+                        + "INNER JOIN departamento USING(id_departamento);");
+                
                 while (rs.next()) {                
-                    System.out.println("\n["+rs.getInt("id_personal")+"]   "+rs.getString("nombres")+"   "+rs.getString("apellidos")
-                    +"   Departamento"+rs.getString("departamento"));
+                    System.out.println("\n["+rs.getInt("id_personal")+"]   "+rs.getString("nombres_personal")+"   "+rs.getString("apellidos_personal")
+                    +"   Departamento: "+rs.getString("nombre_departamento"));
                 }
                 cn.con.close();
             } catch (SQLException e) {}

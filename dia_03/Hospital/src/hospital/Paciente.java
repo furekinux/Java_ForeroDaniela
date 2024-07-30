@@ -36,8 +36,9 @@ public class Paciente {
 
                     int edad = (int)(fecha_nacimiento.getTime()-fecha_actual.getTime());
 
-                    System.out.println(rs.getInt("id_paciente")+" "+rs.getInt("id_doctor")+" "+rs.getInt("id_pabellon"));
-                    System.out.println(rs.getInt("nombres_paciente")+" "+rs.getInt("apellidos_paciente")+" "+rs.getInt("direccion")+" "+edad);
+                    System.out.println(rs.getInt("id_paciente")+" "+rs.getInt("id_doctor")+"   "+rs.getInt("id_pabellon"));
+                    System.out.println(rs.getString("nombres_paciente")+"   "+rs.getString("apellidos_paciente")+"   "+rs.getString("direccion")+"   "+edad
+                    +" Años");
                 }
                 cn.con.close();
             } catch (SQLException e) {}

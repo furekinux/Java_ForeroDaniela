@@ -30,10 +30,7 @@ public class Pabellon {
             Statement st;
             ResultSet rs;
             try {
-//                rs=st.executeQuery("SELECT id_departamento,nombre_departamento,nombre_hospital"
-//                    + " FROM departamento "
-//                    + "INNER JOIN hospital USING(id_hospital);");
-                
+
                 st=cn.con.createStatement();
                 rs=st.executeQuery("SELECT id_pabellon,nombre_pabellon,capacidad,ubicacion,nombre_hospital"
                         + " FROM pabellon"+
