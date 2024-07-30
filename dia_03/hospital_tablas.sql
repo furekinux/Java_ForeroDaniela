@@ -43,7 +43,7 @@ create table personal(
     tipo enum("Administrativo","Técnico","Operaciones") not null,
     salario decimal(10,2)
 );
-drop tables hospital,departamento,pabellon,personal,equipo,equipo_personal;
+
 -- Crear Tabla Equipo
 create table equipo(
 	id_equipo int primary key auto_increment not null,
