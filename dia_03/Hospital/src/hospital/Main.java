@@ -6,8 +6,7 @@ import java.util.Scanner;
  * @author Daniela Forero Ballén 1.142.714.225
  */
 public class Main {
-    
-    @SuppressWarnings("UnusedAssignment")
+
     public static void main(String[] args) {
         
         boolean menu = true;
@@ -76,8 +75,8 @@ public class Main {
                                 departamento.departamento_read();
                                 
                             }case 3->{
-                                /*Pabellon pabellon = new Pabellon();
-                                pabellon.pabellon_read();*/
+                                Pabellon pabellon = new Pabellon();
+                                pabellon.pabellon_read();
                                 
                             }case 4->{
                                 /*Personal personal = new Personal();

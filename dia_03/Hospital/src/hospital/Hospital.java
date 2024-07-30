@@ -1,10 +1,13 @@
 package hospital;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,17 +22,23 @@ public class Hospital {
     
     public void hospital_read(){
 
-        ConnecToServer cn=new ConnecToServer();
-        Statement st;
-        ResultSet rs;
+        ConnecToServer cn;
         try {
-            st=cn.con.createStatement();
-            rs=st.executeQuery("select * from hospital;");
-            while (rs.next()) {                
-                System.out.println("\n["+rs.getInt("id_hospital")+"]   "+rs.getString("nombre_hospital")+"   "+rs.getString("direccion_hospital"));
-            }
-            cn.con.close();
-        } catch (SQLException e) {}
+            cn = new ConnecToServer();
+            Statement st;
+            ResultSet rs;
+            try {
+                st=cn.con.createStatement();
+                rs=st.executeQuery("select * from hospital;");
+                while (rs.next()) {                
+                    System.out.println("\n["+rs.getInt("id_hospital")+"]   "+rs.getString("nombre_hospital")+"   "+rs.getString("direccion_hospital"));
+                }
+                cn.con.close();
+            } catch (SQLException e) {}
+        } catch (IOException ex) {
+            Logger.getLogger(Hospital.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
     public void hospital_create(){
@@ -43,31 +52,35 @@ public class Hospital {
         System.out.println("\nDirección del Hospital:");
         direccion_hospital=sc.nextLine();
         
-        ConnecToServer cn=new ConnecToServer();
-        Statement st;
-        ResultSet rs;
-        PreparedStatement ps;
-        
+        ConnecToServer cn;
         try {
-            ps=cn.con.prepareStatement("insert into hospital(nombre_hospital,direccion_hospital) values(?,?);");
-            ps.setString(1, nombre_hospital);
-            ps.setString(2, direccion_hospital);
-            ps.executeUpdate();
-            cn.con.close();
+            cn = new ConnecToServer();
+            PreparedStatement ps;
+        
+            try {
+                ps=cn.con.prepareStatement("insert into hospital(nombre_hospital,direccion_hospital) values(?,?);");
+                ps.setString(1, nombre_hospital);
+                ps.setString(2, direccion_hospital);
+                ps.executeUpdate();
+                cn.con.close();
 
-            System.out.println("\nSe ingresó el hospital correctamente.");
-            
-            Hospital hospital= new Hospital();
-            hospital.hospital_read();
-            
-        } catch (SQLException e) {
-            System.out.println("No se ingresó el hospital, vuelva a intentarlo.");
+                System.out.println("\nSe ingresó el hospital correctamente.");
+
+                Hospital hospital= new Hospital();
+                hospital.hospital_read();
+
+            } catch (SQLException e) {
+                System.out.println("No se ingresó el hospital, vuelva a intentarlo.");
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Hospital.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         
         
     }
     
-    public void hospital_read_especific(int id_hospital){
+    public void hospital_read_especific(int id_hospital) throws IOException{
         ConnecToServer cn=new ConnecToServer();
         Statement st;
         ResultSet rs;
