@@ -45,4 +45,24 @@ public class PlayOffs extends Partido {
         System.out.println("\nEquipo Visitante: "+red+equipoVisitante);
         System.out.println("      Cestas: "+cestasVisitante);
     }
+    
+    @Override
+    public void verInformacion(){
+        System.out.println(blue+"\n@. *|+  Partido PlayOff  +|* .@"+reset);
+        System.out.println("¿Qué tipo de información quiere visualizar?");
+        System.out.println("1. Información general de partido\n2. Marcador actual de partido\n3. Resultados de partido\n4. Equipo Ganador\n0. Volver");
+        int choice = sc.nextInt();
+        switch(choice){
+            case 1->
+                partidoInfo();
+            case 2->
+                partidoMarcador();
+            case 3->
+                partidoResultados();
+            case 4->
+                equipoGanador();
+            default->
+                System.out.println("\n"+red+"Volviendo al Menú principal...\n\n"+reset);
+        }
+    }
 }

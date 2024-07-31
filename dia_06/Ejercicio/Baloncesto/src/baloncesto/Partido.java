@@ -8,6 +8,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,6 +17,7 @@ import java.util.logging.Logger;
  * @author camper
  */
 public class Partido {
+    Scanner sc = new Scanner(System.in);
     
     final String reset = "\033[0m";
     final String blue = "\033[34m";
@@ -132,8 +134,6 @@ public class Partido {
         }else{
             if(cestasLocal>cestasVisitante){
                 System.out.println("El ganador es el equipo local, "+green+equipoLocal+"!");
-            }else if(cestasLocal == cestasVisitante){
-                System.out.println("Empate entre el equipo local "+equipoLocal+" y el equipo visitante "+equipoVisitante);
             }else{
                 System.out.println("El ganador es el equipo visitante, "+red+equipoVisitante+"!");
             }
@@ -169,5 +169,25 @@ public class Partido {
         System.out.println("      Cestas: "+cestasLocal);
         System.out.println("\nEquipo Visitante: "+red+equipoVisitante);
         System.out.println("      Cestas: "+cestasVisitante);
+    }
+    
+    public void verInformacion(){
+        System.out.println(blue+"\n@. *|+  Partido Corriente  +|* .@"+reset);
+        System.out.println("¿Qué tipo de información quiere visualizar?");
+        System.out.println("1. Información general de partido\n2. Marcador actual de partido\n3. Resultados de partido\n4. Equipo Ganador\n0. Volver");
+        int choice = sc.nextInt();
+        switch(choice){
+            case 1->{
+                partidoInfo();
+            }case 2->{
+                partidoMarcador();
+            }case 3->{
+                partidoResultados();
+            }case 4->{
+                equipoGanador();
+            }default->{
+                System.out.println("\n"+red+"Volviendo al Menú principal...\n\n"+reset);
+            }
+        }
     }
 }

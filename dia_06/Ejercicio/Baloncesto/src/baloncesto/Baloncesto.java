@@ -40,63 +40,12 @@ public class Baloncesto {
                         choice = sc.nextInt();
                         switch(choice){
                             case 1->{
-                                System.out.println(blue+"\n@. *|+  Partido de Liga  +|* .@"+reset);
-                                System.out.println("¿Qué tipo de información quiere visualizar?");
-                                System.out.println("1. Información general de partido\n2. Marcador actual de partido\n3. Resultados de partido\n4. Equipo Ganador\n0. Volver");
-                                choice = sc.nextInt();
-                                switch(choice){
-                                    case 1->{
-                                        partidoliga.partidoInfo();
-                                    }case 2->{
-                                        partidoliga.partidoMarcador();
-                                    }case 3->{
-                                        partidoliga.partidoResultados();
-                                    }case 4->{
-                                        partidoliga.equipoGanador();
-                                    }default->{
-                                        System.out.println("\n"+red+"Volviendo al Menú principal...\n\n"+reset);
-                                        sec=false;
-                                    }
-                                }
-                            }case 2->{
-                                System.out.println(blue+"\n@. *|+  Partido PlayOff  +|* .@"+reset);
-                                System.out.println("¿Qué tipo de información quiere visualizar?");
-                                System.out.println("1. Información general de partido\n2. Marcador actual de partido\n3. Resultados de partido\n4. Equipo Ganador\n0. Volver");
-                                choice = sc.nextInt();
-                                switch(choice){
-                                    case 1->{
-                                        partidoplayoff.partidoInfo();
-                                    }case 2->{
-                                        partidoplayoff.partidoMarcador();
-                                    }case 3->{
-                                        partidoplayoff.partidoResultados();
-                                    }case 4->{
-                                        partidoplayoff.equipoGanador();
-                                    }default->{
-                                        System.out.println("\n"+red+"Volviendo al Menú principal...\n\n"+reset);
-                                        sec=false;
-                                    }
-                                }
-                            }case 3->{
-                                System.out.println(blue+"\n@. *|+  Partido de Corriente  +|* .@"+reset);
-                                System.out.println("¿Qué tipo de información quiere visualizar?");
-                                System.out.println("1. Información general de partido\n2. Marcador actual de partido\n3. Resultados de partido\n4. Equipo Ganador\n0. Volver");
-                                choice = sc.nextInt();
-                                switch(choice){
-                                    case 1->{
-                                        partido1.partidoInfo();
-                                    }case 2->{
-                                        partido1.partidoMarcador();
-                                    }case 3->{
-                                        partido1.partidoResultados();
-                                    }case 4->{
-                                        partido1.equipoGanador();
-                                    }default->{
-                                        System.out.println("\n"+red+"Volviendo al Menú principal...\n\n"+reset);
-                                        sec=false;
-                                    }
-                                }
-                            }default->{
+                                partidoliga.verInformacion();
+                            }case 2->
+                                partidoplayoff.verInformacion();
+                            case 3->
+                                partido1.verInformacion();
+                            default->{
                                 System.out.println("\n"+red+"Volviendo al Menú principal...\n\n"+reset);
                                 sec=false;
                             }
@@ -106,7 +55,6 @@ public class Baloncesto {
                 }case 2->{
                     while(sec){
                         System.out.println(blue+"\n@. *|+  Visualizar información  +|* .@"+reset);
-                        System.out.println("¿Qué tipo de información quiere modificar?");
                         System.out.println("1. Equipo Local\n2. Equipo Visitante\n3. Resultados de partido\n4. Equipo Ganador\n0. Volver");
                         choice = sc.nextInt();
                         switch(choice){
