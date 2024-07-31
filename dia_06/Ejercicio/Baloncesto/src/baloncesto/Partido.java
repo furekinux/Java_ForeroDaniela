@@ -23,6 +23,7 @@ public class Partido {
     final String blue = "\033[34m";
     final String green = "\033[32m";
     final String red = "\033[31m";
+    final String purple = "\033[35m";
     
     protected String equipoLocal;
     protected String equipoVisitante;
@@ -172,9 +173,14 @@ public class Partido {
     }
     
     public void verInformacion(){
-        System.out.println(blue+"\n@. *|+  Partido Corriente  +|* .@"+reset);
+        System.out.println(purple+"\n@. *|+  Partido Corriente  +|* .@"+reset);
         System.out.println("¿Qué tipo de información quiere visualizar?");
-        System.out.println("1. Información general de partido\n2. Marcador actual de partido\n3. Resultados de partido\n4. Equipo Ganador\n0. Volver");
+        System.out.println("""
+                           1. Informaci\u00f3n general de partido
+                           2. Marcador actual de partido
+                           3. Resultados de partido
+                           4. Equipo Ganador
+                           0. Volver""");
         int choice = sc.nextInt();
         switch(choice){
             case 1->{
@@ -186,8 +192,71 @@ public class Partido {
             }case 4->{
                 equipoGanador();
             }default->{
-                System.out.println("\n"+red+"Volviendo al Menú principal...\n\n"+reset);
+                System.out.println("\n"+red+"Volviendo...\n\n"+reset);
             }
+        }
+    }
+    
+    public void modificarInformacion(){
+        System.out.println(blue+"\n@. *|+  Modificar Info Partido  +|* .@"+reset);
+        System.out.println("¿Qué tipo de información quiere modificar?");
+        System.out.println("""
+                           1. Equipo Local
+                           2. Equipo Visitante
+                           3. Cestas del Equipo local
+                           4. Cestas del Equipo visitante
+                           5. Fecha del partido
+                           0. Volver""");
+        int choice = sc.nextInt();
+        switch(choice){
+            case 1->{
+                System.out.println("Ingrese el nuevo equipo local, el actual es: "+getEquipoLocal());
+                String input = sc.nextLine();
+                input = sc.nextLine();
+                setEquipoLocal(input);
+                System.out.println(green+"Se ingresó el nuevo equipo local: "+getEquipoLocal());
+                
+            }case 2->{
+                System.out.println("Ingrese el nuevo equipo local, el actual es: "+getEquipoVisitante());
+                String input = sc.nextLine();
+                input = sc.nextLine();
+                setEquipoVisitante(input);
+                System.out.println(green+"Se ingresó el nuevo equipo local: "+getEquipoVisitante());
+                
+            }case 3->{
+                System.out.println("Ingrese el numero de cestas del equipo local, las actuales son: "+getCestasLocal());
+                int input = sc.nextInt();
+                input = sc.nextInt();
+                setCestasLocal(input);
+                System.out.println(green+"Se ingresó el numero de cestas del equipo local: "+getCestasLocal());
+                
+            }case 4->{
+                System.out.println("Ingrese el numero de cestas del equipo visitante, las actuales son: "+getCestasVisitante());
+                int input = sc.nextInt();
+                input = sc.nextInt();
+                setCestasVisitante(input);
+                System.out.println(green+"Se ingresó el numero de cestas del equipo visitante: "+getCestasVisitante());
+            
+            }case 5->{
+                System.out.println("Ingrese la nueva fecha del partido, la actual es: "+getFechaPartido());
+                String input = sc.nextLine();
+                input = sc.nextLine();
+                setFechaPartido(input);
+                System.out.println(green+"Se ingresó la nueva fecha del partido: "+getFechaPartido());
+                
+            }default->{
+                System.out.println("\n"+red+"Volviendo...\n\n"+reset);
+            }
+        }
+    }
+
+    public void finalizarPartido(){
+        System.out.println(blue+"\n@. *|+   Finalizar Partido   +|* .@"+reset);
+        if(getCestasLocal()==getCestasVisitante()){
+            System.out.println(red+"El partido no puede ser finalizado si no existe algún equipo vencedor");
+            System.out.println(red+"Marcador actual: "+getCestasLocal()+"-"+getCestasVisitante());
+        }else{
+            System.out.println(green+"Se ha finalizado el partido correctamente"+reset);
         }
     }
 }
