@@ -103,14 +103,12 @@ public class Liga extends Partido {
             }case 3->{
                 System.out.println("Ingrese el numero de cestas del equipo local, las actuales son: "+getCestasLocal());
                 int input = sc.nextInt();
-                input = sc.nextInt();
                 setCestasLocal(input);
                 System.out.println(green+"Se ingresó el numero de cestas del equipo local: "+getCestasLocal());
                 
             }case 4->{
                 System.out.println("Ingrese el numero de cestas del equipo visitante, las actuales son: "+getCestasVisitante());
                 int input = sc.nextInt();
-                input = sc.nextInt();
                 setCestasVisitante(input);
                 System.out.println(green+"Se ingresó el numero de cestas del equipo visitante: "+getCestasVisitante());
             
@@ -124,7 +122,6 @@ public class Liga extends Partido {
             }case 6->{
                 System.out.println("Ingrese la jornada del partido de liga, la actual es: "+getJornada());
                 int input = sc.nextInt();
-                input = sc.nextInt();
                 setJornada(input);
                 System.out.println(green+"Se ingresó la nueva fecha del partido: "+getJornada());
                 
