@@ -1,11 +1,11 @@
 <h1 align="center">📎PATRONES DE DISEÑO CREACIONALES✏️</h1>
 <p align="center">El objetivo de los patrones de diseño creacionales es resolver los problemas de creación de instancia. Estos ayudan a delegar la responsabilidad de creación de objetos en situaciones necesarias. Proporcionan mecanismos de creación de objetos que incrementan la flexibilidad y la reutilización de código existente.</p>
-
-
 <h3 align="center">‎ </h3>
+
 
 <h1 align="center">${\color{#ff0000}Singleton}$ ó ${\color{#ff3838}Instancia \space única}$</h1>
 <p>Este patrón de diseño creacional restringe la creación a un único objeto la creación de objetos pertenecientes a una clase y asegura de que sólo haya esta instancia única. Además, proporciona un punto de acceso global a dicha instancia.</p>
+<h2>Ventajas y desventajas</h2>
 <table align="center">
   <tr>
     <td width="50%"><h3 align="center">Ventajas😄</h3></td>
@@ -32,12 +32,12 @@
 <p align="center">
   <a href="https://refactoring.guru/es/design-patterns/singleton/java/example">Singleton en Java</a>
 </p>
-
-
 <h3 align="center">‎ </h3>
+
 
 <h1 align="center">${\color{#d17600}Prototype}$ ó ${\color{#d17600}Prototipo, \space Clon, \space Clone}$</h1>
 <p>Es un patrón de diseño creacional que nos permite copiar objetos existentes sin que el código dependa de sus clases.</p>
+<h2>Ventajas y desventajas</h2>
 <table align="center">
   <tr>
     <td width="50%"><h3 align="center">Ventajas😁</h3></td>
@@ -62,12 +62,12 @@
 <p align="center">
   <a href="https://refactoring.guru/es/design-patterns/prototype/java/example">Prototype en Java</a>
 </p>
-
-
 <h3 align="center">‎ </h3>
+
 
 <h1 align="center">${\color{#34ad00}Abstract \space Factory}$</h1>
 <p>Permite proporcionar una interfaz para crear familias de objetos relacionados o dependientes sin especificar sus clases concretas.</p>
+<h2>Ventajas y desventajas</h2>
 <table align="center">
   <tr>
     <td width="50%"><h3 align="center">Ventajas😄</h3></td>
@@ -78,8 +78,8 @@
       <ul type="circle">
         <li>Se puede tener la certeza de que los productos que obtienes de una fábrica son <b>compatibles entre sí.</b></li>
         <li><b>Se evita un acoplamiento fuerte</b> entre productos concretos y el código cliente.</li>
-        <li><b>Cumple con el Principio de responsabilidad única SRP.</b> Se puede mover el código de creación de productos a un solo lugar, haciendo que el código sea más fácil de mantener.</li>
-        <li><b>Cumple con el Principio de abierto/cerrado.</b> Se pueden introducir nuevas variantes de productos sin descomponer el código cliente existente.</li>
+        <li><b>Cumple con el Principio de responsabilidad única (SRP).</b></li>
+        <li><b>Cumple con el Principio de abierto/cerrado (OCP).</b></li>
       </ul>
     </td>
     <td>
@@ -92,12 +92,12 @@
 <p align="center">
   <a href="https://refactoring.guru/es/design-patterns/abstract-factory/java/example">Abstract Factory en Java</a>
 </p>
-
-
 <h3 align="center">‎ </h3>
+
 
 <h1 align="center">${\color{#0057c2}Builder}$</h1>
 <p>Ayuda a crear objetos complejos de manera sencilla, legible y escalable. Se utiliza en situaciones en las que debe construirse un objeto repetidas veces. Nos permite construir objetos complejos paso a paso. El patrón nos permite producir distintos tipos y representaciones de un objeto empleando el mismo código de construcción.</p>
+<h2>Ventajas y desventajas</h2>
 <table align="center">
   <tr>
     <td width="50%"><h3 align="center">Ventajas😄</h3></td>
@@ -106,25 +106,27 @@
   <tr>
     <td>
       <ul type="circle">
-        <li></li>
+        <li>Se pueden <b>construir objetos</b> paso a paso, <b>aplazar pasos</b> de la construcción o <b>ejecutar pasos de forma recursiva.</b></li>
+        <li>Se puede <b>reutilizar el mismo código de construcción</b> al construir varias representaciones de productos.</li>
+        <li><b>Cumple con el Principio de responsabilidad única (SRP).</b></li>
       </ul>
     </td>
     <td>
       <ul type="square">
-        <li></li>
+        <li><b>⚠️La complejidad general del código aumenta,</b> ya que el patrón exige la creación de varias clases nuevas.</li>
       </ul>
     </td>
   </tr>
 </table>
 <p align="center">
-  <a href="">Builder en Java</a>
+  <a href="https://refactoring.guru/es/design-patterns/builder/java/example">Builder en Java</a>
 </p>
-
-
 <h3 align="center">‎ </h3>
 
+
 <h1 align="center">${\color{#7e00c2}Factory Method}$</h1>
-<p>Nos ayuda a tener instancias de un objeto dado el tipo. Este patrón nos permite crear diferentes objetos usando la palabra new, pero no directamente en la clase que lo necesita si no desde un método que podríamos llamar fabrica y esta a su vez nos devolverá el objeto solicitado, pero desde otra clase.</p>
+<p>Nos ayuda a tener instancias de un objeto dado el tipo. Este patrón nos permite crear diferentes objetos usando la palabra new, pero no directamente en la clase que lo necesita si no desde un método que podríamos llamar fabrica y esta a su vez nos devolverá el objeto solicitado, pero desde otra clase. Proporciona una interfaz para crear objetos en una superclase, mientras permite a las subclases alterar el tipo de objetos que se crearán.</p>
+<h2>Ventajas y desventajas</h2>
 <table align="center">
   <tr>
     <td width="50%"><h3 align="center">Ventajas😄</h3></td>
@@ -133,13 +135,18 @@
   <tr>
     <td>
       <ul type="circle">
-        <li></li>
+        <li><b>Evitas un acoplamiento</b> fuerte entre el creador y los productos concretos.</li>
+        <li><b>Cumple con el Principio de responsabilidad única (SRP).</b></li>
+        <li><b>Cumple con el Principio de abierto/cerrado (OCP).</b></li>
       </ul>
     </td>
     <td>
       <ul type="square">
-        <li></li>
+        <li><b>⚠️Puede ser que el código se complique,</b> ya que debes incorporar una multitud de nuevas subclases para implementar el patrón. La situación ideal sería introducir el patrón en una jerarquía existente de clases creadoras.</li>
       </ul>
     </td>
   </tr>
 </table>
+<p align="center">
+  <a href="https://refactoring.guru/es/design-patterns/factory-method/java/example">Factory Method en Java</a>
+</p>
