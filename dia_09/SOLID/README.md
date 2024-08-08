@@ -215,7 +215,56 @@ class Cuadrado extends Rectangulo {
 <p align="center"><img src="https://www.guvi.in/blog/wp-content/uploads/2022/06/1_yKk2XKJaCLNlDxQMx1r55Q-1142x1024.png" width="70%"></p>
 
 <h2>Interface Segregation Principle</h2>
-<p>La segregación significa <b>mantener las cosas separadas</b>, y el Principio de Segregación de Interfaces se trata de <b>separar las interfaces</b>.</p>
+<p>La segregación significa <b>mantener las cosas separadas</b>, y el Principio de Segregación de Interfaces se trata de <b>separar las interfaces</b>. Establece que <b>muchas interfaces específicas</b> del cliente son mejores que una interfaz de propósito general. No se debe obligar a los clientes a implementar una función que no necesitan.</p>
+<h3>Implementación</h3>
+<p>El siguiente ejemplo fue tomado de la página <a href="https://www.freecodecamp.org/espanol/news/los-principios-solid-explicados-en-espanol/">www.freecodecamp.org</a>.</p>
+<p>Se tiene una una interfáz llamada Estacionamiento que contiene las siguientes funciones.</p>
+
+```java
+public interface Estacionamiento {
+	void aparcarCoche(); // Reducir el recuento de puntos vacíos en 1
+	void sacarCoche(); // Aumenta los espacios vacíos en 1
+	void getCapacidad(); // Devuelve la capacidad del coche
+	double calcularTarifa(Coche coche); // Devuelve el precio en función del número de horas.
+	void hacerPago(Coche coche);
+}
+
+class Coche {
+}
+```
+<p>Si se quiere implementar un estacionamiento gratis a partir de la anterior clase, se tendrá la siguiente:</p>
+
+```java
+public class EstacionamientoGratis implements Estacionamiento {
+
+	@Override
+	public void aparcarCoche() {
+		
+	}
+
+	@Override
+	public void sacarCoche() {
+
+	}
+
+	@Override
+	public void getCapacidad() {
+
+	}
+
+	@Override
+	public double calcularTarifa(Coche coche) {
+		return 0;
+	}
+
+	@Override
+	public void hacerPago(Coche coche) {
+		throw new Exception("Estacionamiento es gratis");
+	}
+}
+```
+<p>No se cumple con el principio porque la clase se vió obligada a realizar modificaciones a las funciones que incluían el pago por el Estacionamiento, esto puede ser solucionado por medio de la segregación, separando las interfases de tal manera que los datos que involucran el pago se encuentren un una interfáz independiente del Estacionamiento que incluye pago y EstacionamientoGratis que no implementa pagos.</p>
+<p align="center"><img src="https://www.freecodecamp.org/espanol/news/content/images/size/w1000/2022/10/SOLID-Tutorial-1024x432.png" width="60%"/></p>
 <p align="center"><img src="https://www.guvi.in/blog/wp-content/uploads/2022/06/1_2hmyR9L43Vm64MYxj4Y89w-1200x601.png" width="70%"></p>
 
 
