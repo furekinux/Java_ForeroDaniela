@@ -269,3 +269,5 @@ public class EstacionamientoGratis implements Estacionamiento {
 
 
 <h2>Dependency Inversion Principle</h2>
+<p>El principio de inversión de dependencia establece que <b>nuestras clases deben depender de interfaces o clases abstractas en lugar de clases y funciones concretas</b>.</p>
+<p align="center"><img src="https://toidicodedao.com/wp-content/uploads/2016/05/oop-principles-15-638.jpg" width="70%"/></p>
