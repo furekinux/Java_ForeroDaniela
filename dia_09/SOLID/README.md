@@ -140,17 +140,23 @@ public class FacturaPersistencia {
 }
 ```
 
-<p>Se separan los métodos en 2 clases distintas: FacturaImpres, esto con el fin de no veernos obligados a realizar modificaciones que afecten a una clase grande que contenga distintos métodos para distintos propositos.</p>
+<p>Se separan los métodos en 2 clases distintas: FacturaImpresion y FacturaPersistencia, esto con el fin de no veernos obligados a realizar modificaciones que afecten a una clase grande que contenga distintos métodos para distintos propositos.</p>
 
 <p align="center"><img src="https://www.guvi.in/blog/wp-content/uploads/2022/06/1_P3oONz9Da3Tc1w97fMV73Q-1200x854.png" width="70%"></p>
 
 
 <h2>Open-Closed Principle</h2>
-<p><b>Ingrese</b> su texto aqui</p>
+<p>El principio de apertura y cierre <b>exige que las clases deban estar abiertas a la extensión y cerradas a la modificación.</b> Los términos Modificación y Extensión se definen de la siguiente manera:</p>
+<ul type="square">
+  <li>Modificación significa cambiar el código de una clase existente.</li>
+  <li>Extensión significa agregar una nueva funcionalidad.</li>
+</ul>
+<p>Es decir, que podamos agregar nuevas funcionalidad, pero no podemos cambiar una ya existente de una clase</p>
 <p align="center"><img src="https://www.guvi.in/blog/wp-content/uploads/2022/06/1_0MtFBmm6L2WVM04qCJOZPQ-1200x684.png" width="70%"></p>
 
 
 <h2>Liskov Substitution Principle</h2>
+<p>El Principio de Sustitución de Liskov establece que <b>las subclases deben ser sustituibles por sus clases base.</b> En otras palabras, las clases hijas deberían cumplir las mismas funciones de la clase padre debido a la herencia.</p>
 <p align="center"><img src="https://www.guvi.in/blog/wp-content/uploads/2022/06/1_yKk2XKJaCLNlDxQMx1r55Q-1142x1024.png" width="70%"></p>
 
 
