@@ -15,7 +15,7 @@
 <h3>implementación</h3>
 <p>El siguiente ejemplo fue tomado de la página <a href="https://www.freecodecamp.org/espanol/news/los-principios-solid-explicados-en-espanol/">www.freecodecamp.org</a>.</p>
 
-<p>Inicialmente tenemos la clase Libro, teniendo en cuenta que se trata de una tienda</p>
+<p>Inicialmente tenemos la clase Libro, teniendo en cuenta que se trata de una tienda que vende este objeto.Cuenta con el constructor de dicha clase.</p>
 
 ```java
 class Libro {
@@ -34,6 +34,7 @@ class Libro {
 	}
 }
 ```
+<p>Luego, se tiene a la clase factura que contiene el constructor de la misma y cada uno de los métodos que posee.</p>
 
 ```java
 public class Factura {
@@ -76,9 +77,8 @@ public class Factura {
 <p>El ejemplo cuenta con 3 métodos distintos: calculaTotal, imprimeFactura, guardaArchivo. Las razones por las que no cumple con el principio son las siguientes:</p>
 
 <ul type="square">
-  <li>...</li>
-  <li>...</li>
-  <li>...</li>
+  <li>A la hora de realizar una modificación, toda la clase se verá afectada por el cambio, lo cual causará problemas a la hora de realizar control de versiones en el proyecto por parte de otros compañeros que hacen parte.</li>
+  <li>Se mezcla la lógica de persistencia con la lógica de negocios en el método guardarArchivo.</li>
 </ul>
 
 <p>La aplicación correcta del principio de responsabilidad única es la siguiente:</p>
