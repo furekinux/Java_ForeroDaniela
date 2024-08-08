@@ -3,8 +3,11 @@
 <h3 align="center">‎ </h3>
 
 
+
 <h1 align="center">${\color{#ff0000}Singleton}$ ó ${\color{#ff3838}Instancia \space única}$</h1>
 <p>Este patrón de diseño creacional restringe la creación a un único objeto la creación de objetos pertenecientes a una clase y asegura de que sólo haya esta instancia única. Además, proporciona un punto de acceso global a dicha instancia.</p>
+<p align="center"><img src="https://www.arquitecturajava.com/wp-content/uploads/sigletonobjetos.png" width="45%"/></p>
+
 <h2>Ventajas y desventajas</h2>
 <table align="center">
   <tr>
@@ -32,11 +35,15 @@
 <p align="center">
   <a href="https://refactoring.guru/es/design-patterns/singleton/java/example">Singleton en Java</a>
 </p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/content/singleton/singleton.png?id=108a0b9b5ea5c4426e0afa4504491d6f" width="60%"/></p>
 <h3 align="center">‎ </h3>
+
 
 
 <h1 align="center">${\color{#d17600}Prototype}$ ó ${\color{#d17600}Prototipo, \space Clon, \space Clone}$</h1>
 <p>Es un patrón de diseño creacional que nos permite copiar objetos existentes sin que el código dependa de sus clases.</p>
+<p align="center"><img src="https://www.juntadeandalucia.es/servicios/madeja/sites/default/files/imagecache/wysiwyg_imageupload_big/wysiwyg_imageupload/10/PAtronPrototipo.jpg" width="45%"/></p>
+
 <h2>Ventajas y desventajas</h2>
 <table align="center">
   <tr>
@@ -62,12 +69,16 @@
 <p align="center">
   <a href="https://refactoring.guru/es/design-patterns/prototype/java/example">Prototype en Java</a>
 </p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/content/prototype/prototype.png?id=e912b1ada20bbf7b2ffc09e93b9fab20" width="60%"/></p>
 <h3 align="center">‎ </h3>
+
 
 
 <h1 align="center">${\color{#34ad00}Abstract \space Factory}$</h1>
 <p>Permite proporcionar una interfaz para crear familias de objetos relacionados o dependientes sin especificar sus clases concretas.</p>
 <h2>Ventajas y desventajas</h2>
+<p align="center"><img src="https://refactoring.guru/images/patterns/diagrams/abstract-factory/solution1.png?id=71f2018d8bb443b9cce90d57110675e3" width="45%"/></p>
+
 <table align="center">
   <tr>
     <td width="50%"><h3 align="center">Ventajas😄</h3></td>
@@ -92,11 +103,15 @@
 <p align="center">
   <a href="https://refactoring.guru/es/design-patterns/abstract-factory/java/example">Abstract Factory en Java</a>
 </p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/content/abstract-factory/abstract-factory-es.png?id=0378c9faca39afa20e41a4d37e7e3828" width="60%"/></p>
 <h3 align="center">‎ </h3>
+
 
 
 <h1 align="center">${\color{#0057c2}Builder}$</h1>
 <p>Ayuda a crear objetos complejos de manera sencilla, legible y escalable. Se utiliza en situaciones en las que debe construirse un objeto repetidas veces. Nos permite construir objetos complejos paso a paso. El patrón nos permite producir distintos tipos y representaciones de un objeto empleando el mismo código de construcción.</p>
+<p align="center"><img src="https://www.juntadeandalucia.es/servicios/madeja/sites/default/files/imagecache/wysiwyg_imageupload_big/wysiwyg_imageupload/10/PatronConstructor.jpg" width="45%"/></p>
+
 <h2>Ventajas y desventajas</h2>
 <table align="center">
   <tr>
@@ -121,12 +136,17 @@
 <p align="center">
   <a href="https://refactoring.guru/es/design-patterns/builder/java/example">Builder en Java</a>
 </p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/content/builder/builder-es.png?id=6a685e06fc69071a93b7282298a55837" width="60%"/></p>
 <h3 align="center">‎ </h3>
+
 
 
 <h1 align="center">${\color{#7e00c2}Factory Method}$</h1>
 <p>Nos ayuda a tener instancias de un objeto dado el tipo. Este patrón nos permite crear diferentes objetos usando la palabra new, pero no directamente en la clase que lo necesita si no desde un método que podríamos llamar fabrica y esta a su vez nos devolverá el objeto solicitado, pero desde otra clase. Proporciona una interfaz para crear objetos en una superclase, mientras permite a las subclases alterar el tipo de objetos que se crearán.</p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/diagrams/factory-method/solution2-es.png?id=a8ba5847ee9e34e57c6090afce86673a" width="45%"/></p>
+
 <h2>Ventajas y desventajas</h2>
+
 <table align="center">
   <tr>
     <td width="50%"><h3 align="center">Ventajas😄</h3></td>
@@ -150,3 +170,4 @@
 <p align="center">
   <a href="https://refactoring.guru/es/design-patterns/factory-method/java/example">Factory Method en Java</a>
 </p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/content/factory-method/factory-method-es.png?id=4040e2911292e5a623f10e36c380459d" width="60%"/></p>
