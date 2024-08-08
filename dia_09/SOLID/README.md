@@ -5,7 +5,6 @@
 <p><b>Una clase debe hacer UNA cosa y, por lo tanto, debe tener una sola razón para cambiar.</b> Es decir, solo un cambio <b>POTENCIAL</b> (ya sea en lógica de base de datos, lógica de registro, etc.) en la especificación del software debería poder afectar la <b>ESPECIFICACIÓN</b> de la clase.</p>
 
 <h3>¿Por qué seguirlo?</h3>
-
 <ul type="square">
   <li><b>Evitar incompatibilidad en proyectos con equipo de trabajo:</b> Muchos equipos diferentes pueden trabajar en el mismo proyecto y editar la misma clase por diferentes motivos, esto podría dar lugar a módulos incompatibles.</li>
   <li><b>Facilita el control de versiones:</b> Si se realiza un cambio a una clase importanteAl seguir el PRU, sabremos que está relacionado con el almacenamiento o con cosas relacionadas con la base de datos.</li>
@@ -14,7 +13,6 @@
 
 <h3>implementación</h3>
 <p>El siguiente ejemplo fue tomado de la página <a href="https://www.freecodecamp.org/espanol/news/los-principios-solid-explicados-en-espanol/">www.freecodecamp.org</a>.</p>
-
 <p>Inicialmente tenemos la clase Libro, teniendo en cuenta que se trata de una tienda que vende este objeto.Cuenta con el constructor de dicha clase.</p>
 
 ```java
@@ -75,12 +73,10 @@ public class Factura {
 }
 ```
 <p>El ejemplo cuenta con 3 métodos distintos: calculaTotal, imprimeFactura, guardaArchivo. Las razones por las que no cumple con el principio son las siguientes:</p>
-
 <ul type="square">
   <li>A la hora de realizar una modificación, toda la clase se verá afectada por el cambio, lo cual causará problemas a la hora de realizar control de versiones en el proyecto por parte de otros compañeros que hacen parte.</li>
   <li>Se mezcla la lógica de persistencia con la lógica de negocios en el método guardarArchivo.</li>
 </ul>
-
 <p>La aplicación correcta del principio de responsabilidad única es la siguiente:</p>
 
 ```java
@@ -141,7 +137,6 @@ public class FacturaPersistencia {
 ```
 
 <p>Se separan los métodos en 2 clases distintas: FacturaImpresion y FacturaPersistencia, esto con el fin de no veernos obligados a realizar modificaciones que afecten a una clase grande que contenga distintos métodos para distintos propositos.</p>
-
 <p align="center"><img src="https://www.guvi.in/blog/wp-content/uploads/2022/06/1_P3oONz9Da3Tc1w97fMV73Q-1200x854.png" width="70%"></p>
 
 
@@ -157,10 +152,70 @@ public class FacturaPersistencia {
 
 <h2>Liskov Substitution Principle</h2>
 <p>El Principio de Sustitución de Liskov establece que <b>las subclases deben ser sustituibles por sus clases base.</b> En otras palabras, las clases hijas deberían cumplir las mismas funciones de la clase padre debido a la herencia.</p>
+<h3>implementación</h3>
+<p>El siguiente ejemplo fue tomado de la página <a href="https://www.freecodecamp.org/espanol/news/los-principios-solid-explicados-en-espanol/">www.freecodecamp.org</a>.</p>
+<p>En este ejemplo, una clase padre llamada Rectángulo contiene sus métodos y constructores.</p>
+
+```java
+class Rectangulo {
+	protected int ancho, alto;
+
+	public Rectangulo() {
+	}
+
+	public Rectangulo(int ancho, int alto) {
+		this.ancho = ancho;
+		this.alto = alto;
+	}
+
+	public int getAncho() {
+		return ancho;
+	}
+
+	public void setAncho(int ancho) {
+		this.ancho = ancho;
+	}
+
+	public int getAlto() {
+		return alto;
+	}
+
+	public void setAlto(int alto) {
+		this.alto = alto;
+	}
+
+	public int getArea() {
+		return ancho * alto;
+	}
+}
+```
+<p>Luego, está una clase hija de Rectangulo llamada Cuadrado, la cuál posee el mismo método de getArea(), que como su nombre lo dice, calcula el área de dicha figura. Adicionalmente realiza un Override para modificar los setters para adaptarlos a la figura de lados iguales.</p>
+
+```java
+class Cuadrado extends Rectangulo {
+	public Cuadrado() {}
+
+	public Cuadrado(int lado) {
+		ancho = alto = lado;
+	}
+
+	@Override
+	public void setAncho(int ancho) {
+		super.setAncho(ancho);
+		super.setAlto(ancho);
+	}
+
+	@Override
+	public void setAlto(int alto) {
+		super.setAlto(alto);
+		super.setAncho(alto);
+	}
+}
+```
 <p align="center"><img src="https://www.guvi.in/blog/wp-content/uploads/2022/06/1_yKk2XKJaCLNlDxQMx1r55Q-1142x1024.png" width="70%"></p>
 
-
 <h2>Interface Segregation Principle</h2>
+<p>La segregación significa <b>mantener las cosas separadas</b>, y el Principio de Segregación de Interfaces se trata de <b>separar las interfaces</b>.</p>
 <p align="center"><img src="https://www.guvi.in/blog/wp-content/uploads/2022/06/1_2hmyR9L43Vm64MYxj4Y89w-1200x601.png" width="70%"></p>
 
 
