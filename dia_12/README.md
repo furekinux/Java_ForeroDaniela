@@ -131,9 +131,40 @@ public class SquarePegAdapter extends RoundPeg { // Extiende de la clase RoundPe
     public double getRadius() {
         double result;
 
-        // Se calcula la longitud del vertice al centro del cuadrado, siendo equivalente al radio dentro de una circunferencia
+        // Se calcula la longitud entre un vértice y el centro del cuadrado, siendo equivalente al radio dentro de una circunferencia
         result = (Math.sqrt(Math.pow((peg.getWidth() / 2), 2) * 2));
         return result;
+    }
+}
+```
+<p>Finalmente, se hace uso de las clases en la principal de la siguiente manera:</p>
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        
+        // Una pieza circular, cumple con los requisitos de tener un radio menor o igual y cabe en el agujero
+        RoundHole hole = new RoundHole(5);
+        RoundPeg rpeg = new RoundPeg(5);
+        if (hole.fits(rpeg)) {
+            System.out.println("Pieza circular de radio 5 cabe en el agujero circular de radio 5.");
+        }
+
+        // Si se usara el mètodo con las siguientes piezas, no se obtendría un resultado porque no tienen radio
+        SquarePeg smallSqPeg = new SquarePeg(2);
+        SquarePeg largeSqPeg = new SquarePeg(20);
+
+        // El adaptador se encarga de hallar el equivalente al radio
+        SquarePegAdapter smallSqPegAdapter = new SquarePegAdapter(smallSqPeg);
+        SquarePegAdapter largeSqPegAdapter = new SquarePegAdapter(largeSqPeg);
+        if (hole.fits(smallSqPegAdapter)) {
+            // Si la pieza cabe, se da el siguiente mensaje
+            System.out.println("Pieza cuadrara de ancho 2 cabe en el agujero circular de radio 5.");
+        }
+        if (!hole.fits(largeSqPegAdapter)) {
+            // Si la pieza NO cabe, se da el siguiente mensaje
+            System.out.println("Pieza cuadrara de ancho 20 no cabe en el agujero circular de radio 5.");
+        }
     }
 }
 ```
