@@ -246,13 +246,13 @@ con decenas de funciones, de la cual sólo necesitas una pequeña parte.
 <p></p>
 
 <h3>Command</h3>
-
+<p>Convierte una solicitud en un objeto independiente que contiene toda la información sobre la solicitud. Esta transformación te permite parametrizar los métodos con diferentes solicitudes, retrasar o poner en cola la ejecución de una solicitud y soportar operaciones que no se pueden realizar.</p>
 
 <h3>Iterator</h3>
-
+<p>Permite recorrer elementos de una colección sin exponer su representación subyacente (lista, pila, árbol, etc.).</p>
 
 <h3>Mediator</h3>
-
+<p>Permite reducir las dependencias caóticas entre objetos. El patrón restringe las comunicaciones directas entre los objetos, forzándolos a colaborar únicamente a través de un objeto mediador.</p>
 
 <h3>Memento</h3>
 
