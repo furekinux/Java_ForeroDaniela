@@ -169,11 +169,33 @@ public class Main {
 }
 ```
 <h3>Bridge</h3>
+<p>Permite dividir una clase grande, o un grupo de clases estrechamente relacionadas, en dos jerarquías separadas (abstracción e implementación) que pueden desarrollarse independientemente la una de la otra.</p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/diagrams/bridge/problem-es.png" width="60%"/></p>
+<p align="center"><img src="https://cdn-icons-png.freepik.com/512/5083/5083079.png" width="5%"/></p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/diagrams/bridge/solution-es.png" width="60%"/></p>
+<p>Se cambia la herencia a la composición, de tal manera que los colores estarán en subclases separadas de las formas, entonces, al añadir nuevos colores no se exigirá cambiar o crear nuevas subclases para cada forma con determinado color.</p>
+
 <h3>Composite</h3>
+<p>Permite componer objetos en estructuras de árbol y trabajar con esas estructuras como si fueran objetos individuales.</p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/diagrams/composite/problem-es.png" width="60%"/></p>
+<p align="center"><img src="https://cdn-icons-png.freepik.com/512/5083/5083079.png" width="5%"/></p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/content/composite/composite-comic-1-es.png" width="60%"/></p>
+<p>No se tiene la preocupación por clases concretas que hacen parte del conjunto final, se trata por igual cada uno a través de una interfáz común. Si ocurre una equivocación con un método, la solicitud pasará por todos los objetos el árbol.</p>
+
 <h3>Decorator</h3>
+<p></p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/diagrams/decorator/problem1-es.png" width="40%"/><img src="https://refactoring.guru/images/patterns/diagrams/decorator/problem2.png" width="40%"/></p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/diagrams/decorator/problem2.png" width="40%"/><img src="https://refactoring.guru/images/patterns/diagrams/decorator/problem3.png" width="40%"/></p>
+<p align="center"><img src="https://cdn-icons-png.freepik.com/512/5083/5083079.png" width="5%"/></p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/diagrams/decorator/solution1-es.png" width="60%"/></p>
+<p align="center"><img src="https://refactoring.guru/images/patterns/diagrams/decorator/solution2.png" width="40%"/><img src="https://refactoring.guru/images/patterns/diagrams/decorator/solution3-es.png" width="40%"/></p>
+
 <h3>Facade</h3>
+
 <h3>Flyweight</h3>
+
 <h3>Proxy</h3>
+
 
 <h2><a name="comportamiento">Patrones de diseño de Comportamiento</a></h2>
 <p>Este patrón trata con algoritmos y la asignación de responsabilidades entre objetos.</p>
