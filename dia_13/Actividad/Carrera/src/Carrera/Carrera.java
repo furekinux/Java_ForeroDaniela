@@ -1,18 +1,26 @@
 package Carrera;
 
-import java.util.Calendar;
-import java.util.Locale;
-
 public class Carrera {
+    static final Object testigo = new Object();
+    private static final int NUM_ATLETAS = 4;
+    static int turno = 1;
 
     public static void main(String[] args) {
-        Atleta atleta1 = new Atleta("Juan");
-        Atleta atleta2 = new Atleta("Pepe");
-        Atleta atleta3 = new Atleta("Florinda");
-        Atleta atleta4 = new Atleta("Elsa");
-        
-        
-        System.out.println("El atleta "+atleta1.getName()+" tomó "+" segundos en recorrer la pistas");
+        Atleta[] atletas = new Atleta[NUM_ATLETAS];
+
+        synchronized (testigo) {
+            System.out.println("El primer atleta se prepara para comenzar...");
+        }
+
+        for (int i = 0; i < NUM_ATLETAS; i++) {
+            atletas[i] = new Atleta(i + 1, i == NUM_ATLETAS - 1);
+            new Thread(atletas[i]).start();
+        }
+
+        synchronized (testigo) {
+            testigo.notify();
+        }
     }
+
     
 }
